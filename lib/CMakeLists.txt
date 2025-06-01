@@ -28,7 +28,8 @@ add_library(Crab ${CRAB_LIBS_TYPE}
   tag.cpp
   )
 
-target_link_libraries(Crab ${GMP_LIB})
+target_include_directories(Crab PUBLIC "${PROJECT_SOURCE_DIR}/include")
+target_link_libraries(Crab ${GMP_LIB} ${GAPSTOP_LIBS})
 
 install(TARGETS Crab
   LIBRARY DESTINATION crab/lib
